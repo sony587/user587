@@ -1,6 +1,3 @@
-
-
-
 const express=require('express');
 
 const x=require('./x');
@@ -23,6 +20,46 @@ const PORT=3001;
 
 app.listen(PORT, () => console.log(`Server is Running ${PORT}`));
 app.get('/api/x',(req,res)=>res.json(x));
+// GET All USERS in table format
+app.get('/api/x/table', (req, res) => {
+    const tableHtml = `
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${x.map(user => `
+                <tr>
+                    <td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${user.status || 'N/A'}</td>
+                </tr>
+            `).join('')}
+        </tbody>
+    </table>`;
+
+    res.send(tableHtml);
+});
 
 //GET Specific USER Based on ID
 
