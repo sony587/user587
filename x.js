@@ -4,9 +4,9 @@ const x = [
     
     id: 1,
     
-    name: 'P Sai Kiran',
+    name: 'KIM TAEHYUNG',
     
-    email: 'psaikiran@gmail.com',
+    email: 'taehyung@gmail.com',
     
     type: 'admin'
     
@@ -16,9 +16,9 @@ const x = [
     
     id: 2,
     
-    name: 'Srinivas',
+    name: 'PARK JIMIN',
     
-    email: 'vasu@gmail.com',
+    email: 'jimin@gmail.com',
     
     status: 'guest'
     
@@ -28,9 +28,9 @@ const x = [
     
     id: 3,
     
-    name: 'Thrishank',
+    name: 'JEON JUNKOOK',
     
-    email: 'thrishank@gmail.com',
+    email: 'jungkook@gmail.com',
     
     status: 'admin'
     
